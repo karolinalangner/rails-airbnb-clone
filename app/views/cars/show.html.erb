@@ -9,6 +9,14 @@
       <%= @car.title %>
     </li>
   </ul>
+<div class="container">
+      <%= simple_form_for [@booking, @car] do |f| %>
+        <%= f.input :start_date %>
+        <%= f.input :end_date %>
+        <%= f.submit "Book this 🚙", class: "btn btn-primary" %>
+      <% end %>
+</div>
+
   <%= link_to 'Back', root_path, class: "btn btn-dark" %>
   <br>
 </div>
