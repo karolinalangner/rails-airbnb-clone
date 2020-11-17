@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div  class="col-4">
+      <h1 class="text-center">Hire my 🚙</h1>
+      <%= simple_form_for @car do |f| %>
+        <%= f.input :model %>
+        <%= f.input :brand %>
+        <%= f.input :price %>
+        <%= f.input :description %>
+        <%= f.input :title %>
+        <%= f.submit "Submit my Car", class: "btn btn-warning" %>
+      <% end %>
+      <br>
+      <%= link_to 'Back', root_path, class: "btn btn-dark" %>
+    </div>
+  </div>
+</div>
