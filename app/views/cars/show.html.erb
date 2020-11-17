@@ -1,7 +1,15 @@
 <div class="container">
   <h1><%= @car.title %></h1>
+  <br>
+  <ul>
+    <li>
+      <%= @car.model %>
+      <%= @car.brand %>
+      <%= @car.price %>
+      <%= @car.title %>
+    </li>
+  </ul>
   <%= link_to 'Back', root_path, class: "btn btn-dark" %>
   <br>
-
 </div>
 
