@@ -13,8 +13,13 @@ class CarsController < ApplicationController
 
   def create
     @car = Car.new(car_params)
-    @car.save
-    redirect_to car_path(@car.id)
+    @car.user = current_user
+    if @car.save
+      redirect_to car_path(@car.id)
+    else
+      flash[:alert] = "You must sign in"
+      render :new
+    end
   end
 
   private
