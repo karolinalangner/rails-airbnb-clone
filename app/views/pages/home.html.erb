@@ -1,3 +1,17 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon" style="position: sticky; top: 0">
+  <%= link_to "Hire out your car", "/cars/new", class: "navbar-brand" %>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class: "nav-link" %>
+      </li>
+    </ul>
+  </div>
+</div>
+
 <div class="container">
 <h2 class="text-center">Kar Rental</h2>
   <div class="cards">
@@ -31,3 +45,17 @@
       <% end %>
     </div>
 </div>
+
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+    This footer is made by <i class="fas fa-car-side"></i> from London
+  </div>
+</div>
+
