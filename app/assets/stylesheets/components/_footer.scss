@@ -13,14 +13,26 @@
 }
 .footer-links a {
   color: black;
-  opacity: 0.15;
   text-decoration: none;
   font-size: 24px;
   padding: 0px 10px;
 }
-.footer-links a:hover {
-  opacity: 1;
+.footer-links a:hover .fa-instagram {
+  color: #E1306C;
 }
+
+.footer-links a:hover .fa-facebook {
+  color: #4267B2;
+}
+
+.footer-links a:hover .fa-twitter {
+  color: #1DA1F2;
+}
+
+.footer-links a:hover .fa-youtube {
+  color: #FF0000;
+}
+
 .footer .fa-car-side {
-  color: #37B39D;
+  color: #390446;
 }
