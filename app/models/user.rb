@@ -6,5 +6,5 @@ class User < ApplicationRecord
 
   has_many :bookings
   has_many :cars
-  validates :description, :location, presence: true
+  validates :description, :location, :name, presence: true
 end
