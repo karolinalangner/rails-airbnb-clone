@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RailsAirbnbClone</title>
+    <title>Rent-it!</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -9,12 +9,14 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap" rel="stylesheet">
   </head>
 
   <body>
     <div class="navbar navbar-expand-sm navbar-light navbar-kar" style="position: sticky; top: 0; z-index: 500">
       <a href="/"><i class="fas fa-car-side"></i></a>
-      <%= link_to "Hire out your car", "/cars/new", class: "btn btn-flat" %>
+      <h1 style="font-family: 'Bowlby One SC', cursive; color:#390446;">Rent-it!</h1>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <%= link_to "Rent your car", "/cars/new", class: "btn btn-flat button-green" %>
         <ul class="navbar-nav mr-auto">
