@@ -1,7 +1,7 @@
 .navbar-kar {
   justify-content: space-between;
   background: white;
-
+  height: 100px;
 }
 
 .navbar-kar .fa-car-side {
@@ -11,10 +11,13 @@
 
 .navbar-kar .btn-flat{
   margin: 0 auto;
+  height: 70px;
 }
 
 .btn-flat {
   color: white;
+  text-align: center;
+  line-height: 55px;
   padding: 8px 24px;
   border-radius: 4px;
   background: #1EDD88;
