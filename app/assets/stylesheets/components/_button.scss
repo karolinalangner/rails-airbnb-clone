@@ -1,0 +1,19 @@
+.button-green {
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
+  background: #1EDD88;
+  transition: background 0.3s ease;
+}
+
+.button-green:hover {
+  background: #1BCB7F;
+  color: white;
+}
+
+
+.button-resized {
+  height: 30px;
+  padding: 0px;
+  margin: 35px;
+}

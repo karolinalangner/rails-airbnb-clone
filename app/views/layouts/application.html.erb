@@ -14,10 +14,9 @@
   <body>
     <div class="navbar navbar-expand-sm navbar-light navbar-kar" style="position: sticky; top: 0; z-index: 500">
       <a href="/"><i class="fas fa-car-side"></i></a>
-      <div class="d-flex justify-content-center">
       <%= link_to "Hire out your car", "/cars/new", class: "btn btn-flat" %>
-      </div>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <%= link_to "Rent your car", "/cars/new", class: "btn btn-flat button-green" %>
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
             <%= link_to "Login", new_user_session_path, class: "nav-link" %>
