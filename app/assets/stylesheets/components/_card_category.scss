@@ -15,10 +15,13 @@
 
 .link-to-text-color {
   color: #fff;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   text-decoration: none;
 }
 
 .link-to-text-color:hover {
-  color: blue;
+  color: #38413A;
   text-decoration: none;
+  font-size: 22px;
+  transition: 0.5s;
 }
