@@ -1,36 +1,42 @@
-<div class="container car-details">
-  <div class ="container car-photo">
-    <% if @car.photo.attached? %>
-          <%= cl_image_tag @car.photo.key, height: 300, width: 400, crop: :fill %>
-        <% end %>
-  </div>
-  <div class="container car-description">
-  
-    <h1><%= @car.title %></h1>
-    <h3>£<%= @car.price %>/ day </h3>
-    <br>
-    <ul> 
-      <li><%= @car.brand %></li>
-      <li>Model: <%= @car.model %></li>
+<div class = "blocks">
+    
+    <div class="container car-description">
+    
+      <h1 class="text-center"><%= @car.title %></h1>
+      <div class ="container car-photo">
+      <% if @car.photo.attached? %>
+            <%= cl_image_tag @car.photo.key, height: 300, width: 400, crop: :fill %>
+          <% end %>
+    </div>
+    <div>
+      <h3>£<%= @car.price %>/ day </h3>
+      <br>
 
-      <li>Description: <br> <%= @car.description %> </li>
+      <ul class="list-group list-group-flush"> 
+        <li class="list-group-item"><strong>Brand:</strong><br><%= @car.brand %></li>
+        <li class="list-group-item"><strong>Model:</strong><br> <%= @car.model %></li>
+        <li class="list-group-item"><strong>Description:</strong> <br> <%= @car.description %> </li>
+      </ul>
 
-    </ul>
-    <%= link_to 'Back', root_path, class: "btn btn-dark" %>
-    <br>
-  </div>
+      <br>
+      
+    </div>
 
-  <div class="container about-owner">
-    <p>About owner:</p>
+    <div class="container booking-form">
+      <%= simple_form_for [@car, @booking] do |f| %>
+        <%= f.input :start_date %>
+        <%= f.input :end_date %>
+        <%= f.submit "Book this 🚙", class: "btn btn-primary" %>
+      <% end %>
+    </div>
 
-    <!-- user.avatar-->
-    <%= @car.user.name%>
-    <%= @car.user.description %>
-  </div>
-  <div class="container">
-    <%= simple_form_for [@car, @booking] do |f| %>
-      <%= f.input :start_date %>
-      <%= f.input :end_date %>
-      <%= f.submit "Book this 🚙", class: "btn btn-primary" %>
-    <% end %>
+    <div class="container about-owner">
+      <p><small>About owner:</small></p>
+
+      <!-- user.avatar-->
+      <p><strong><%= @car.user.name%></strong></p>
+      <p><%= @car.user.description %></p>
+      <%= link_to 'Back', root_path, class: "btn btn-dark" %>
+    </div>
+
   </div>
