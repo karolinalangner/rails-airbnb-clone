@@ -1,7 +1,11 @@
 <div class="container car-details">
-  <!-- Car photo bootstrap carousel -->
+  <div class ="container car-photo">
+    <% if @car.photo.attached? %>
+          <%= cl_image_tag @car.photo.key, height: 300, width: 400, crop: :fill %>
+        <% end %>
+  </div>
   <div class="container car-description">
-
+  
     <h1><%= @car.title %></h1>
     <h3>£<%= @car.price %>/ day </h3>
     <br>
@@ -20,7 +24,7 @@
     <p>About owner:</p>
 
     <!-- user.avatar-->
-
+    <%= @car.user.name%>
     <%= @car.user.description %>
   </div>
   <div class="container">
