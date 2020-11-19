@@ -30,7 +30,12 @@
       </div>
        <div class="card container about-owner d-flex justify-content-center">
       <p><small>About owner:</small></p>
-      <!-- user.avatar-->
+      <% if @car.user.photo.attached? %>
+        <%= cl_image_tag @car.user.photo.key, width: 45, height: 45, crop: :thumb, class: "avatar" %>
+      <% else %>
+        <img src="https://www.pikpng.com/pngl/m/263-2631740_empty-avatar-png-user-png-clipart.png" style="width: 45px; height: 45px; border-radius:50%; margin: 20px 0px;">
+      <% end %>
+      <br>
       <p><strong><%= @car.user.name%></strong></p>
       <p><%= @car.user.description %></p>
       </div>
