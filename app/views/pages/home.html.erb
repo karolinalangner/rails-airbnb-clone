@@ -1,13 +1,10 @@
 <div class="container">
+  <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
 
-  <div class="forms">
-    <%= form_tag root_path, method: :get do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Find a Car"
-      %>
-      <br>
+    <%= simple_form_for :search, method: "get" do |f| %>
+      <%= f.input :starts_at, as: :string, required: false, input_html: {class: "datepicker form-control", placeholder: "Start date"} %>
+      <%= f.input :ends_at, as: :string, required: false, input_html: {class: "datepicker form-control", placeholder: "End date"} %>
+      <%= f.input :brand, as: :string, required: false, input_html: {class: "form-control", value: params.dig(:search, :brand), placeholder: "Find a car" }%>
       <button name="button" type="submit" class="btn btn-flat button-green">
         <i class="fas fa-search"></i> Search
       </button>
@@ -15,28 +12,16 @@
   </div>
 </div>
 
-<div class="container">
-  <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
-    <h2>Choose dates</h2>
-
-    <%= simple_form_for :search, method: "get" do |f| %>
-      <%= f.input :starts_at, as: :string, required: false, input_html: {class: "datepicker"} %>
-      <%= f.input :ends_at, as: :string, required: false, input_html: {class: "datepicker"} %>
-      <%= f.button :submit, "Go", class: "btn btn-primary" %>
-    <% end %>
-  </div>
-</div>
-
 <div class="container my-5">
-    <div class="cards">
-      <% @cars.each do |car| %>
-        <% if car.photo.attached? %>
-          <div class="card-category" style="background-image: url('<%= cl_image_path car.photo.key, height: 300, width: 400, crop: :fill %>');">
-          <% else %>
-          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1457332253637-21d324d25df9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80)">
-          <% end %>
-          <%= link_to car.title, car_path(car), class: "link-to-text-color" %>
+  <div class="cards">
+    <% @cars.each do |car| %>
+      <% if car.photo.attached? %>
+        <div class="card-category" style="background-image: url('<%= cl_image_path car.photo.key, height: 300, width: 400, crop: :fill %>');">
+      <% else %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1457332253637-21d324d25df9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80)">
+      <% end %>
+      <%= link_to car.title, car_path(car), class: "link-to-text-color" %>
         </div>
       <% end %>
-    </div>
-</div>
+        </div>
+  </div>
