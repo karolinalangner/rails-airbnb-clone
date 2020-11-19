@@ -1,6 +1,5 @@
 <div class = "blocks">
-
-    <h1 class="text-center" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.2);"><%= @car.title %><small> - £<%= @car.price %>/ day</small></h1> 
+    <h1 class="text-center" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.2);"><%= @car.title %><small> - £<%= @car.price %>/ day</small></h1>
     <br>
     <div class ="container car-photo" style="text-align: center">
       <% if @car.photo.attached? %>
@@ -12,13 +11,13 @@
     <div class="container details-booking-container" style="display: grid; grid-template-columns: 2fr 1.5fr; grid-gap: 10px;" >
 
       <div class= "card container">
-        <ul class="list-group list-group-flush"> 
+        <ul class="list-group list-group-flush">
           <li class="list-group-item"><strong>Brand:</strong><br><%= @car.brand %></li>
           <li class="list-group-item"><strong>Model:</strong><br> <%= @car.model %></li>
           <li class="list-group-item"><strong>Description:</strong> <br> <%= @car.description %> </li>
         </ul>
       </div>
-      
+
       <div class="container card booking-form" style="padding: 10px;">
         <%= simple_form_for [@car, @booking] do |f| %>
           <%= f.input :start_date %>
@@ -42,10 +41,10 @@
     </div>
 
     <br>
-   
+
 
     <%= link_to 'Back', root_path, class: "btn btn-dark" %>
 
-    
+
 
   </div>
