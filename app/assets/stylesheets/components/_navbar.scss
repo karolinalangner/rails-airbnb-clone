@@ -8,6 +8,19 @@
   font-size: 50px
 }
 
+.navbar-kar .fa-car-side:hover {
+  color: #390446a8;
+  transition: 0.2s;
+}
+
+.heading {
+  font-size: 45px;
+  
+}
+
+.heading:hover {
+  color: #390446a8;
+}
 
 .navbar-kar .navbar-collapse {
   flex-grow: 0;
@@ -20,3 +33,12 @@
 .navbar {
   height: 100px;
 }
+
+.navbar .btn {
+  margin: 0, 8px, 0, 10px;
+}
+
+.dropdown-toggle {
+  margin: 5px;
+}
+
