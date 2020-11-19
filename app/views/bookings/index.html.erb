@@ -13,14 +13,18 @@
 <div class="booking-display">
 
 <h2> To come up </h2>
-  <div class="display-future">
-    <img src="images/" alt="Pic of the car">
-    <div>
-      <h3>Name of the car</h3>
-      <p>Description of the car</p>
+<%= @bookings.each do |booking| %>
+  <% link_to booking_path(booking) do  %>
+    <div class="display-future">
+      <%= cl_image_tag(booking.car.photo.key,
+      width: 400, height: 300, crop: :fill) %>
+      <div>
+        <h3>Name of the car: <%= booking.car.name %></h3>
+        <p>Description of the car: <%= booking.car.description %></p>
+      </div>
     </div>
-  </div>
-
+  <% end %>
+<% end %>
 
 <h2> Previous </h2>
   <div class="display-previous">
