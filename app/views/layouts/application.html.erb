@@ -14,16 +14,17 @@
   </head>
 
   <body>
+    <div class="page-container">
       <div class="navbar navbar-expand-sm navbar-light navbar-kar" style="position: sticky; top: 0; z-index: 500">
         <a href="/"><i class="fas fa-car-side"></i></a>
-        <h1 style="font-family: 'Bowlby One SC', cursive; color:#390446;">Rent-it!</h1> 
-        
+        <h1 style="font-family: 'Bowlby One SC', cursive; color:#390446;">Rent-it!</h1>
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
          <%= link_to "Rent your car", "/cars/new", class: "btn btn-flat button-green" %>
           <ul class="navbar-nav mr-auto">
-          
+
               <% if user_signed_in? %>
-        
+
                 <li class="nav-item">
                 <%= link_to "Messages", "#", class: "nav-link" %>
                 </li>
@@ -47,9 +48,11 @@
           </ul>
          </div>
       </div>
+    <div class="content-container">
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
+    </div>
 
     <div class="footer">
       <div class="footer-links">
@@ -62,5 +65,6 @@
         This footer is made by <i class="fas fa-car-side"></i> from London
       </div>
     </div>
+  </div>
   </body>
 </html>
