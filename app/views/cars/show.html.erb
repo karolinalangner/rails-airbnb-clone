@@ -1,5 +1,5 @@
 <div class = "blocks">
-    <h1 class="text-center" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.2);"><%= @car.title %><small> - £<%= @car.price %>/ day</small></h1>
+    <h1 class="text-center" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.2);"><%= @car.title %><small> - £<span id="car_price"><%= @car.price %> </span>/ day</small></h1>
     <br>
     <div class ="container car-photo" style="text-align: center">
       <% if @car.photo.attached? %>
@@ -20,8 +20,11 @@
 
       <div class="container card booking-form" style="padding: 10px;">
         <%= simple_form_for [@car, @booking] do |f| %>
-          <%= f.input :start_date %>
-          <%= f.input :end_date %>
+          <%= f.input :start_date, as: :string, label: false, input_html: {class: "datepicker form-control", placeholder: "Start date"} %>
+          <%= f.input :end_date, as: :string, label: false, input_html: {class: "datepicker form-control", placeholder: "End date"} %>
+          <div class="d-flex justify-content-center mb-2">
+          <strong>Total £</strong><strong id="total_price"><%= @car.price %></strong>
+          </div>
           <div class="d-flex justify-content-center">
           <%= f.submit "Book this 🚙", class: "btn btn-primary btn-block" %>
           </div>
