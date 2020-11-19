@@ -1,13 +1,23 @@
 <div class="container">
-  <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
+  <div class="form-wrapper" style="width: 800px; margin: 0 auto;">
 
-    <%= simple_form_for :search, method: "get" do |f| %>
-      <%= f.input :starts_at, as: :string, required: false, input_html: {class: "datepicker form-control", placeholder: "Start date"} %>
-      <%= f.input :ends_at, as: :string, required: false, input_html: {class: "datepicker form-control", placeholder: "End date"} %>
-      <%= f.input :brand, as: :string, required: false, input_html: {class: "form-control", value: params.dig(:search, :brand), placeholder: "Find a car" }%>
-      <button name="button" type="submit" class="btn btn-flat button-green">
+    <%= simple_form_for :search, method: "get", class: 'form-inline' do |f| %>
+    <div class="row">
+      <div class="col-3">
+      <%= f.input :starts_at, as: :string, required: false, label: false, input_html: {class: "datepicker form-control", placeholder: "Start date"} %>
+      </div>
+      <div class="col-3">
+      <%= f.input :ends_at, as: :string, required: false, label: false, input_html: {class: "datepicker form-control", placeholder: "End date"} %>
+      </div>
+      <div class="col-3">
+      <%= f.input :brand, as: :string, required: false, label: false, input_html: {class: "form-control", value: params.dig(:search, :brand), placeholder: "Find a car" }%>
+      </div>
+      <div class="col">
+      <button name="button" type="submit" class="btn btn-flat button-green btn-cta">
         <i class="fas fa-search"></i> Search
       </button>
+      </div>
+    </div>
     <% end %>
   </div>
 </div>
