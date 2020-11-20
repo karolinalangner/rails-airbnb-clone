@@ -27,7 +27,7 @@
           <ul class="navbar-nav mr-auto">
 
               <% if user_signed_in? %>
-                 
+
                 <li class="nav-item dropdown">
                   <% if current_user.photo.attached? %>
                     <%= cl_image_tag current_user.photo.key, width: 40, height: 40, crop: :thumb, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -64,7 +64,7 @@
     <%= yield %>
     </div>
 
-    <div class="footer">
+    <div class="footer mt-5">
       <div class="footer-links">
         <a href="#"><i class="fab fa-instagram"></i></a>
         <a href="#"><i class="fab fa-facebook"></i></a>

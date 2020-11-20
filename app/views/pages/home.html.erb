@@ -1,4 +1,4 @@
- <div class="homepage-banner" style= "background-image:  linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1587580945215-5d4aabb2c8ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1302&q=80')">
+ <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80')">
   <div class="container">
     <div class="form-wrapper" style="width: 800px; margin: 0 auto;">
       <br>
@@ -25,7 +25,9 @@
 </div>
 
 
-  <div class="cards">
+<h3 class="text-center mt-5"><strong> Rent-it Ride-it </strong> </h3>
+
+  <div class="cards my-5">
       <% @cars.each do |car| %>
         <div class="card-trip">
           <% if car.photo.attached? %>
