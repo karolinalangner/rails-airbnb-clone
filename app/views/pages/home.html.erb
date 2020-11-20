@@ -22,18 +22,27 @@
   </div>
 </div>
 
-<div class="container my-5">
+<div class="homepage-banner" style="background-image: url('')"></div>
+
+
   <div class="cards">
-    <% @cars.each do |car| %>
-      <% if car.photo.attached? %>
-        <div class="card-category" style="background-image: url('<%= cl_image_path car.photo.key, height: 300, width: 400, crop: :fill %>');">
-          <%= link_to car.title, car_path(car), class: "link-to-text-color" %>
+      <% @cars.each do |car| %>
+        <div class="card-trip">
+          <% if car.photo.attached? %>
+            <img src="<%= cl_image_path car.photo.key %>" />
+          <% end %>
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= link_to car.title, car_path(car) %></h2>
+          </div>
+          <h2 class="card-trip-pricing">£<%=car.price %> /day</h2>
+          <% if car.user.photo.attached? %>
+            <img src='<%= cl_image_tag car.user.photo.key %>' class='card-trip-user avatar-bordered' />
+          <% else %>
+            <img src="https://www.pikpng.com/pngl/m/263-2631740_empty-avatar-png-user-png-clipart.png" class="card-trip-user avatar-bordered" />
+          <% end %>
         </div>
-      <% else %>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1457332253637-21d324d25df9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80)">
-          <%= link_to car.title, car_path(car), class: "link-to-text-color" %>
         </div>
-      <% end %>
-    <% end %>
+        <% end %>
   </div>
-</div>
+
