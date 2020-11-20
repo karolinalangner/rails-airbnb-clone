@@ -9,7 +9,7 @@
       <h1 style="font-family:'Abel', sans-serif; font-weight: bold; text-shadow: 1px 1px 3px rgba(0,0,0,0.2); padding-top: 15px;"><%= @car.title %><small> - £<span id="car_price"><%= @car.price %> </span>/ day</small></h1>
     </div>
    
-    <div class="container card booking-form align-content-center align-items-flex-end" style="padding-top: 50px; height: 255px;">
+    <div class="container card booking-form align-content-center align-items-flex-end" style="padding-top: 50px; height: 255px; margin-top: 20px;">
         <%= simple_form_for [@car, @booking] do |f| %>
           <%= f.input :start_date, as: :string, label: false, input_html: {class: "datepicker form-control", placeholder: "Start date"} %>
           <%= f.input :end_date, as: :string, label: false, input_html: {class: "datepicker form-control", placeholder: "End date"} %>
