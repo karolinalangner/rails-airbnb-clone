@@ -22,12 +22,26 @@
         <% end %>
       </div>
 
+
       <div class= "card container">
         <ul class="list-group list-group-flush">
           <li class="list-group-item"><strong>Brand:</strong><br><%= @car.brand %></li>
           <li class="list-group-item"><strong>Model:</strong><br> <%= @car.model %></li>
           <li class="list-group-item"><strong>Description:</strong> <br> <%= @car.description %> </li>
         </ul>
+
+       <div class="card container about-owner d-flex justify-content-center">
+      <p><small>About owner:</small></p>
+      
+      <% if @car.user.photo.attached? %>
+        <%= cl_image_tag @car.user.photo.key, width: 45, height: 45, crop: :thumb, class: "avatar" %>
+      <% else %>
+        <img src="https://www.pikpng.com/pngl/m/263-2631740_empty-avatar-png-user-png-clipart.png" style="width: 45px; height: 45px; border-radius:50%; margin: 20px 0px;">
+      <% end %>
+      <br>
+      <p><strong><%= @car.user.name%></strong>, <%= @car.user.location.capitalize %> </p>
+      <p><%= @car.user.description %></p>
+
       </div>
 
       <div class="card d-flex container about-owner d-flex justify-content-center">
