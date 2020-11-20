@@ -7,8 +7,8 @@ export const updateTotalPrice = () => {
  endDate.addEventListener("change", event => {
   const date1 = new Date(startDate.value);
   const date2 = new Date(endDate.value);
-  const days = date2.getDate() - date1.getDate();
-  const total_price = Number(car_price.innerText) * days
+  const diffInDays =  (date2 - date1) / (1000 * 60 * 60 * 24)
+  const total_price = Number(car_price.innerText) * diffInDays
   price.innerText = total_price
  });
 }
