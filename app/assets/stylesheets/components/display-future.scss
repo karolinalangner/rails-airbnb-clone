@@ -4,11 +4,13 @@
   background-color: white;
   border-radius: 4px;
   box-shadow: 0px 10px 30px rgba(0,0,0,0.1);
+  margin: 15px 0;
 }
 
 .display-future div {
   flex-grow: 1;
   padding: 0px 24px;
+ 
 }
 
 .display-future h3 {
@@ -17,7 +19,18 @@
   font-size: 24px
 }
 
+.display-future h4 {
+  font-size: 20px;
+}
+
 .display-future p {
-  margin-top: 0px;
-  opacity: 0.6;
+
+  opacity: 0.8;
+}
+
+.display-future a {
+  text-decoration: none;
+  color: black;
+  opacity: 0.8;
+  
 }
