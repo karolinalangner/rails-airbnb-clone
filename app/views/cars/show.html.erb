@@ -1,24 +1,15 @@
-<div class = "blocks">
-    <h1 class="text-center" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.2);"><%= @car.title %><small> - £<span id="car_price"><%= @car.price %> </span>/ day</small></h1>
-    <br>
-    <div class ="container car-photo" style="text-align: center">
+<div class = "show container">
+<br>
+ <div class="details-booking-container" style="display: grid; grid-template-columns: 2fr 1.5fr; grid-gap: 10px;" >
+
+    <div class ="car-photo text-center">
       <% if @car.photo.attached? %>
-        <%= cl_image_tag @car.photo.key, height: 300, width: 400, crop: :fill %>
+        <%= cl_image_tag @car.photo.key, width: 550, crop: :fill %>
         <% end %>
+      <h1 style="font-family:'Abel', sans-serif; font-weight: bold; text-shadow: 1px 1px 3px rgba(0,0,0,0.2); padding-top: 15px;"><%= @car.title %><small> - £<span id="car_price"><%= @car.price %> </span>/ day</small></h1>
     </div>
-    <br>
-    <br>
-    <div class="container details-booking-container" style="display: grid; grid-template-columns: 2fr 1.5fr; grid-gap: 10px;" >
-
-      <div class= "card container">
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item"><strong>Brand:</strong><br><%= @car.brand %></li>
-          <li class="list-group-item"><strong>Model:</strong><br> <%= @car.model %></li>
-          <li class="list-group-item"><strong>Description:</strong> <br> <%= @car.description %> </li>
-        </ul>
-      </div>
-
-      <div class="container card booking-form" style="padding: 10px;">
+   
+    <div class="container card booking-form align-content-center align-items-flex-end" style="padding-top: 50px;">
         <%= simple_form_for [@car, @booking] do |f| %>
           <%= f.input :start_date, as: :string, label: false, input_html: {class: "datepicker form-control", placeholder: "Start date"} %>
           <%= f.input :end_date, as: :string, label: false, input_html: {class: "datepicker form-control", placeholder: "End date"} %>
@@ -30,6 +21,15 @@
           </div>
         <% end %>
       </div>
+
+
+      <div class= "card container">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><strong>Brand:</strong><br><%= @car.brand %></li>
+          <li class="list-group-item"><strong>Model:</strong><br> <%= @car.model %></li>
+          <li class="list-group-item"><strong>Description:</strong> <br> <%= @car.description %> </li>
+        </ul>
+
        <div class="card container about-owner d-flex justify-content-center">
       <p><small>About owner:</small></p>
       
@@ -41,14 +41,23 @@
       <br>
       <p><strong><%= @car.user.name%></strong>, <%= @car.user.location.capitalize %> </p>
       <p><%= @car.user.description %></p>
+
       </div>
+
+      <div class="card d-flex container about-owner d-flex justify-content-center">
+        <p><small>About owner:</small></p>
+        <% if @car.user.photo.attached? %>
+          <%= cl_image_tag @car.user.photo.key, width: 45, height: 45, crop: :thumb, class: "avatar" %>
+        <% else %>
+          <img src="https://www.pikpng.com/pngl/m/263-2631740_empty-avatar-png-user-png-clipart.png" style="width: 45px; height: 45px; border-radius:50%; margin: 20px 0px;">
+        <% end %>
+      
+        <p><strong><%= @car.user.name%></strong>,<%= @car.user.location.capitalize %></p>
+        <p><%= @car.user.description %></p>
+        </div>
     </div>
-
     <br>
-
-
     <%= link_to 'Back', root_path, class: "btn btn-dark" %>
 
-
-
   </div>
+</div>
