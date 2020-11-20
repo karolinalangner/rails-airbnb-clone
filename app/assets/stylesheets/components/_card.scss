@@ -1,9 +1,12 @@
 .cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
-  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width:1500px;
+  margin-left: auto;
+  margin-right: auto;
 }
+
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
