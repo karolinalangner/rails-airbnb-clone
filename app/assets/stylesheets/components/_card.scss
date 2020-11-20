@@ -5,6 +5,17 @@
   position: relative;
 }
 
+.booking-card {
+  width: 500px;
+  margin-right: 50px;
+  margin-left: 20px;
+}
+
+.booking-card img {
+  padding: 20px;
+}
+
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {
