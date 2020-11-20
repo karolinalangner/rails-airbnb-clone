@@ -51,12 +51,13 @@
   transition: 0.5s;
 }
 
-.card-trip .card-trip-infos a:hover {
-  text-decoration: none;
-}
-
-
 .card-trip .card-trip-infos a {
  color: #390446;
-
 }
+
+.card-trip .card-trip-infos a:hover {
+  text-decoration: none;
+  font-size: 110%;
+}
+
+
